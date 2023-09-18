@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <h1>Książki</h1>
+            </div>
+        </div>
+        <form id="addBookForm" class="row mb-3 g-4">
+            <div class="col-6">
+                <input type="text" name="title" class="form-control" placeholder="Tytuł" aria-label="Tytuł" required>
+            </div>
+
+            <div class="col-6">
+                <input type="text" name="author" class="form-control" placeholder="Autor" aria-label="Autor" required>
+            </div>
+
+            <div class="col-6">
+                <input type="text" name="genre" class="form-control" placeholder="Gatunek" aria-label="Gatunek"
+                    required>
+            </div>
+            <div class="col-6">
+                <input type="text" name="isbn" class="form-control" placeholder="Numer ISBN" aria-label="Numer ISBN"
+                    required>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Zapisz</button>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col">
+                <table class="table align-middle">
+                    <thead>
+
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tytuł</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Gatunek</th>
+                            <th scope="col">Numer ISBN</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="booksTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="editBookModal" class="modal fade" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editBookModalLabel">Edytuj książkę</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editBookForm" class="row mb-3 g-4">
+                        <input type="hidden" id="editBookId" name="id">
+                        <div class="col-6">
+                            <input id="editBookTitle" type="text" name="title" class="form-control" placeholder="Tytuł"
+                                aria-label="Tytuł" required>
+                        </div>
+
+                        <div class="col-6">
+                            <input id="editBookAuthor" type="text" name="author" class="form-control"
+                                placeholder="Autor" aria-label="Autor" required>
+                        </div>
+                        <div class="col-6">
+                            <input id="editBookGenre" type="text" name="genre" class="form-control"
+                                placeholder="Gatunek" aria-label="Gatunek" required>
+                        </div>
+                        <div class="col-6">
+                            <input id="editBookIsbn" type="text" name="isbn" class="form-control"
+                                placeholder="Numer ISBN" aria-label="Numer ISBN" required>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                    <button form="editBookForm" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Zapisz
+                        zmiany</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="books.js"></script>
+</body>
+
+
+</html>
